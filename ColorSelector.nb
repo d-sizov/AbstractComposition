@@ -1,0 +1,226 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7735,        218]
+NotebookOptionsPosition[      7106,        192]
+NotebookOutlinePosition[      7483,        208]
+CellTagsIndexPosition[      7440,        205]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mycolors", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"chkboxesValues", "=", 
+   RowBox[{"{", "}"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6915653985787635`*^9, 3.6915654048181205`*^9}, {
+  3.6915654499317007`*^9, 3.691565451193773*^9}, {3.6915686642385483`*^9, 
+  3.6915686645855684`*^9}, {3.6915693865888643`*^9, 3.6915693878429365`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "@", "colorSelector"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"colorSelector", "[", 
+   RowBox[{"Optional", " ", "[", 
+    RowBox[{
+     RowBox[{"buttonVisible_", "?", "BooleanQ"}], ",", "True"}], "]"}], "]"}],
+   ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"itemsize", "=", "140"}], "}"}], ",", 
+    RowBox[{"Column", "[", 
+     RowBox[{
+      RowBox[{"{", "\n", 
+       RowBox[{
+        RowBox[{"ColorSetter", "[", 
+         RowBox[{
+          RowBox[{"Dynamic", "[", "tempcolor", "]"}], ",", 
+          RowBox[{"ImageSize", "->", "itemsize"}]}], "]"}], ",", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+         "\"\<\:0414\:043e\:0431\:0430\:0432\:0438\:0442\:044c \:0432 \:043d\
+\:0430\:0431\:043e\:0440\>\"", ",", 
+          RowBox[{
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"mycolors", ",", "tempcolor"}], "]"}], ";", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"chkboxesValues", ",", "True"}], "]"}]}], ",", 
+          RowBox[{"ImageSize", "->", "itemsize"}]}], "]"}], ",", 
+        RowBox[{"Button", "[", 
+         RowBox[{"\"\<\:0421\:0431\:0440\:043e\:0441\>\"", ",", 
+          RowBox[{
+           RowBox[{"mycolors", "=", 
+            RowBox[{"{", "}"}]}], ";", 
+           RowBox[{"chkboxesValues", "=", 
+            RowBox[{"{", "}"}]}]}], ",", 
+          RowBox[{"ImageSize", "->", "itemsize"}]}], "]"}], ",", 
+        RowBox[{"Dynamic", "@", 
+         RowBox[{"Multicolumn", "[", 
+          RowBox[{
+           RowBox[{"MapThread", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Column", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"ColorSetter", "[", 
+                   RowBox[{"Dynamic", "[", 
+                    RowBox[{"mycolors", "[", 
+                    RowBox[{"[", "#1", "]"}], "]"}], "]"}], "]"}], ",", 
+                  RowBox[{"Checkbox", "[", 
+                   RowBox[{"Dynamic", "[", 
+                    RowBox[{"chkboxesValues", "[", 
+                    RowBox[{"[", "#2", "]"}], "]"}], "]"}], "]"}]}], "}"}], 
+                ",", 
+                RowBox[{"Alignment", "->", "Center"}]}], "]"}], "&"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Range", "[", 
+                RowBox[{"Length", "@", "mycolors"}], "]"}], ",", 
+               RowBox[{"Range", "[", 
+                RowBox[{"Length", "@", "chkboxesValues"}], "]"}]}], "}"}]}], 
+            "]"}], ",", "4"}], "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{"buttonVisible", ",", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Take colors\>\"", ",", 
+            RowBox[{"selectedcolors", ":=", 
+             RowBox[{"Pick", "[", 
+              RowBox[{"mycolors", ",", "chkboxesValues"}], "]"}]}]}], "]"}], 
+          ",", "\"\<\>\""}], "]"}]}], "}"}], ",", 
+      RowBox[{"Spacings", "->", "1.7"}]}], "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.691567406238595*^9, 3.691567410051813*^9}, {
+   3.691567531563763*^9, 3.6915675958574405`*^9}, {3.6915676958121576`*^9, 
+   3.6915677282580137`*^9}, {3.691568273208183*^9, 3.6915683264262266`*^9}, {
+   3.691568379614269*^9, 3.69156839536917*^9}, {3.6915684283700576`*^9, 
+   3.6915684330833273`*^9}, {3.691568527742741*^9, 3.6915685295538445`*^9}, {
+   3.6915685646718535`*^9, 3.691568569645138*^9}, 3.691568646245519*^9, {
+   3.691569392219187*^9, 3.6915694030848083`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"colorSelector", "[", "False", "]"}]], "Input",
+ CellChangeTimes->{{3.6915685798277206`*^9, 3.6915685840289607`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     ColorSetterBox[Dynamic[$CellContext`tempcolor], "Swatch",
+      ImageSize->140]},
+    {
+     ButtonBox["\<\"\:0414\:043e\:0431\:0430\:0432\:0438\:0442\:044c \:0432 \
+\:043d\:0430\:0431\:043e\:0440\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>(
+       AppendTo[$CellContext`mycolors, $CellContext`tempcolor]; 
+       AppendTo[$CellContext`chkboxesValues, True]),
+      Evaluator->Automatic,
+      ImageSize->140,
+      Method->"Preemptive"]},
+    {
+     ButtonBox["\<\"\:0421\:0431\:0440\:043e\:0441\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>($CellContext`mycolors = {}; \
+$CellContext`chkboxesValues = {}),
+      Evaluator->Automatic,
+      ImageSize->140,
+      Method->"Preemptive"]},
+    {
+     DynamicBox[ToBoxes[
+       Multicolumn[
+        MapThread[Column[{
+           ColorSetter[
+            Dynamic[
+             Part[$CellContext`mycolors, #]]], 
+           Checkbox[
+            Dynamic[
+             Part[$CellContext`chkboxesValues, #2]]]}, Alignment -> 
+          Center]& , {
+          Range[
+           Length[$CellContext`mycolors]], 
+          Range[
+           Length[$CellContext`chkboxesValues]]}], 4], StandardForm],
+      ImageSizeCache->{31., {2.5, 9.5}}]},
+    {"\<\"\"\>"}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1.7}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{
+  3.691567732277243*^9, {3.691568575659482*^9, 3.691568584824006*^9}, 
+   3.6915694475383506`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Dynamic", "@", "mycolors"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "@", "selectedcolors"}]}], "Input",
+ CellChangeTimes->{{3.6915677470490885`*^9, 3.6915677634530263`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`mycolors, StandardForm],
+  ImageSizeCache->{27., {2., 9.}}]], "Output",
+ CellChangeTimes->{{3.6915676122023754`*^9, 3.6915676434401617`*^9}, {
+  3.6915677486821814`*^9, 3.6915677644210815`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`selectedcolors, StandardForm],
+  ImageSizeCache->{98., {0., 9.}}]], "Output",
+ CellChangeTimes->{{3.6915676122023754`*^9, 3.6915676434401617`*^9}, {
+  3.6915677486821814`*^9, 3.691567764427082*^9}}]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{1010, 749},
+WindowMargins->{{Automatic, 278}, {65, Automatic}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 446, 10, 66, "Input",
+ InitializationCell->True],
+Cell[1007, 32, 3543, 81, 231, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[4575, 117, 140, 2, 30, "Input"],
+Cell[4718, 121, 1640, 48, 241, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6395, 174, 203, 3, 50, "Input"],
+Cell[6601, 179, 241, 4, 30, "Output"],
+Cell[6845, 185, 245, 4, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
